@@ -1,31 +1,18 @@
-#include <iostream> 
+#include <iostream>
 using namespace std;
-int main()
-{
+void add(int num1, int num2);
+main(){
+	int num1=0;
+	int num2=0;
+	cout<<"Enter number 1: ";
+	cin>>num1;
+	cout<<"Enter number 2: ";
+	cin>>num2;
+	add(num1, num2);	
 	
-	system("cls");
-	while(true){
-	float marks=0;
-	cout<<"Please Enter Your  Marks: ";
-	cin>>marks;
-	
-	float passingMarks=50.0;
-	
-	
-	float passedNumbers;
-	if(marks>=51)
-	{
-		passedNumbers=marks-50;
-		cout<<"You have passsed with "<<passedNumbers<<" marks"<<endl;
-		cout<<endl<<endl;
+
 	}
-	else
-	{
-		int passedNumbers=50-marks;
-		cout<<"You have failed with "<<passedNumbers<<" marks"<<endl;
-		
+void add(int num1, int num2){
+	int sum=num1+num2;		
+	cout<<"Sum is: "<<sum;
 	}
-	cout<<"Passing Marks are: "<<passingMarks<<endl;
-	cout<<endl;
-	}
-}

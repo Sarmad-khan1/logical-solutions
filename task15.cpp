@@ -1,84 +1,37 @@
 #include <iostream>
-#include <conio.h>
 using namespace std;
-float lowestfare(string time, int distance);
-int main()
-{
+void nam1();
+void nam2();
+void nam3();
+void nam4();
+void nam5();
+void nam6();
+
+main(){
 	system("cls");
-	while (true)
-	{
-
-		string tx1 = "Taxi";
-		string tr = "Train";
-		string tb = "Bus";
-
-		string time;
-		cout << "Travel period of the day (night/day): ";
-		cin >> time;
-
-		int distance;
-		cout << "Enter Number of Kilometers: ";
-		cin >> distance;
-
-		float lowrent;
-		lowrent = lowestfare(time, distance);
-
-		if (distance <= 20)
-		{
-			cout << "The lowest fare for " << distance << " kilometers is: " << lowrent << " Euros" << endl;
-			cout << "Suggested Mode of Transportation: " << tx1 << endl;
-		}
-		if (distance > 20 && distance <= 100)
-		{
-			cout << "The lowest fare for " << distance << " kilometers is: " << lowrent << " Euros" << endl;
-			cout << "Suggested Mode of Transportation: " << tb << endl;
-		}
-		if (distance > 100)
-		{
-			cout << "The lowest fare for " << distance << " kilometers is: " << lowrent << " Euros" << endl;
-			cout << "Suggested Mode of Transportation: " << tr << endl;
-		}
-
-		cout << "Press Enter to Continue...";
-		getch();
-		system("cls");
+			
+	nam1();	
+	nam2();
+	nam3();
+	nam4();
+	nam5();
+	nam6();	
 	}
-}
-float lowestfare(string time, int distance)
-{
-	float pretaxicharges = 0.70;
-	float dayTaxiRent = 0.79;
-	float nightTaxiRent = 0.90;
-
-	float busRentDayNight = 0.09;
-
-	float trainDayNight = 0.06;
-
-	float fare = 0.0;
-
-	if (distance <= 20)
-	{
-		if (time == "day")
-		{
-			fare = pretaxicharges + dayTaxiRent * distance;
-		}
-		else if (time == "night")
-		{
-			fare = pretaxicharges + nightTaxiRent * distance;
-		}
+void nam1(){
+	cout<<"S"<<endl;
 	}
-	if (distance > 20 && distance <= 100)
-	{
-		if (time == "day" || time == "night")
-		{
-			fare = busRentDayNight * distance;
-		}
-	}
-	if (distance > 100)
-	{
-		if (time == "day" || time == "night")
-		{
-			fare = trainDayNight * distance;
-		}
-	}
-}
+void nam2(){
+	cout<<"A"<<endl;
+	}	
+void nam3(){
+	cout<<"R"<<endl;
+	}	
+void nam4(){
+	cout<<"M"<<endl;
+	}		
+void nam5(){
+	cout<<"A"<<endl;
+	}			
+void nam6(){
+	cout<<"D"<<endl;
+	}			

@@ -1,36 +1,26 @@
 #include <iostream>
 using namespace std;
-bool calculation(int num);
-int main()
-{
-	system("cls");
-	int num;
-	cout << "Enter a three digit number: ";
-	cin >> num;
+main(){
 
-	int x = calculation(num);
-	if (x == 1)
-	{
-		cout <<1;
-	}
-	else
-	{
-		cout << 0;
-	}
-}
+	int num1;
+	int num2;
+	cout<<"Enter first number";
+	cin>>num1;
+	cout<<"Enter second number";
+	cin>>num2;
 
-bool calculation(int num)
-{
-	int digitmod = 0;
-	int total = 0;
-	while (total > 0)
-	{
-		digitmod = digitmod + num % 10;
-		total = total / 10;
-	}
+	if(num1>num2){
+	cout<<"The greater number is: "<<num1;
+	}	
+			
+	else if(num2>num1){
+	cout<<"The greater number is: "<<num2;
+	}				
+	else{
+	cout<<"Both numbers are equal to each other.";
+		}			
 
-	bool numeven = (num % 2 == 0);
-	bool toteven = (total % 2 == 0);
 
-	return (numeven == toteven);
-}
+
+
+		}

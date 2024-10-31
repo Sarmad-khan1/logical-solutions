@@ -1,57 +1,25 @@
+
+
+
 #include <iostream>
-#include <conio.h>
+#include <cmath>
 using namespace std;
-string checktitle(char gender, int age);
-int main()
-{
-	system("cls");
-	char gender;
-	cout<<"Enter your gender(m/f): ";
-	cin>>gender;
+float cbr(float x);
+main(){
+	float x;
+	cout<<"Enter Number: ";
+	cin>>x;
 	
-	int age;
-	cout<<"Enter Your Age: ";
-	cin>>age;
+	float y;
+
+
+	y=cbr(x);
 	
-	string receiver;
-	receiver=checktitle(gender, age);
-	
-	cout<<"Your personal title is "<<receiver<<endl;
-	
-	
-	cout<<"Press Enter to Continue...";
-	getch(); 
-	system("cls");
-	
-	return 0;
+	cout<<"Cube root of "<<x<<" comes out to be: "<<y;
+
 }
-string checktitle(char gender, int age)
-{
-	string gen="";
-	if(age>0 && age<=17)
-	{
-		if(gender=='m')
-		{
-			return "Master";
+float cbr(float x){
+		float a;
+	 	a=cbrt(x);
+		return a;
 		}
-		if(gender=='f')
-		{
-			return "Miss";
-		}
-	}
-	if(age>17)
-	{
-		if(gender=='m')
-		{
-			return "Mr.";
-		}
-		if(gender=='f')
-		{
-			return "Ms.";
-		}
-	}
-	
-	
-	
-	
-}

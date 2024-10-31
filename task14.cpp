@@ -1,51 +1,32 @@
 #include <iostream>
-#include <conio.h>
+#include <cmath>
 using namespace std;
-float totalPrice(string Ttype, int rows, int columns);
-int main()
-{	while(true){
-	string Ttype="";
-	cout<<"Enter ticket type please (premiere/normal/discount): ";
-	cin>>Ttype;
+float height(float x, float y);
+
+main(){
+	float x;
+	cout<<"Enter Distance Length: ";
+	cin>>x;
 	
-	int rows=0;
-	cout<<"Enter number of rows: ";
-	cin>>rows;
+	float y;
+	cout<<"Enter angle: ";
+	cin>>y;
 	
-	int columns=0;
-	cout<<"Enter number of columns: ";
-	cin>>columns;
-	
-	float totalamount=0.0;
-	totalamount=totalPrice(Ttype, rows, columns);
-	
-	cout<<"Total Payable Amount Comes Out To Be: "<<totalamount<<" Euros."<<endl;
-	cout<<"Press Enter to Continue...";
-	getch();
-	system("cls");
-}
-	
-}
-float totalPrice(string Ttype, int rows, int columns)
-{
-	float totalincome=0.0;
-	if(Ttype=="Premiere" || Ttype=="premiere")
-	{
-		totalincome=rows*columns*12.00;
-	}
-	else if(Ttype=="Normal" || Ttype=="normal")
-	{
-		totalincome=rows*columns*7.00;
-	}
-	else if(Ttype=="Discount" || Ttype=="discount")
-	{
-		totalincome=rows*columns*5.00;
-	}
-	else
-	{
-		totalincome=totalincome;
-	}
-	return totalincome;
+	float b= height(x,y);
+	cout<<b;
 	
 
-}
+
+	
+	
+
+    }
+float height(float x, float y){
+			float b;
+			float radiance= y/57.2958;	
+			b=x*(tan(radiance));
+			return b;		
+					
+					
+				
+			}

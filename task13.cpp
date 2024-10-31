@@ -1,44 +1,29 @@
 #include <iostream>
-#include <conio.h>
+#include <cmath>
 using namespace std;
-string speedcheck( int speed);
-int main()
-{
-	system("cls");
+float trig(float x);
+float rou(float y);
+main(){
+	float x;
+	cout<<"Enter Number in radians: ";
+	cin>>x;
+	float y;
+	y=trig(x);
+
+	float a;
+	a=rou(y);
+			
+	cout<<"Cosine of "<<x<<" comes out to be: "<<a<<endl;
 	
-	int speed;
-	cout<<"Enter your vehicle speed: ";
-	cin>>speed;
-	
-	string valueReturner;
-	valueReturner=speedcheck( speed );
-	
-	cout<<"Your are at "<<valueReturner<<endl;
-	
-	cout<<"Press Enter to Terminate...";
-	getch();
-	system("cls");
-	
-	
-}
-string speedcheck( int speed )
-{
-	if(speed>10 && speed<50)
-	{
-		return "Normal Speed.";
 	}
-	else if(speed>50 && speed<100)
-	{
-		return "Fast Speed.";
+
+float trig(float x){
+	float z;
+	z=cos(x);
+	return z;	
 	}
-	else if(speed>100 && speed<150)
-	{
-		return "Ultra Fast Speed. ";
+float rou(float y){
+	float b;
+	b=ceil(y);
+	return b;
 	}
-	else
-	{
-		return "Extremely and deadly Fast Speed.";
-	}
-	
-	
-}
