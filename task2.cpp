@@ -1,19 +1,31 @@
 #include <iostream>
 using namespace std;
-void mul(int, int);
-main(){
-int x;
-cout<<"Enter number: ";
-cin>>x;
-int y;
-cout<<"Enter number: ";
-cin>>y;
-
- mul(x,y);
+bool numb(int num, int numb2);
+int main()
+{
+	int num=0;
+	cout<<"Enter first numb: ";
+	cin>>num;
+	
+	int numb2=0;
+	cout<<"Enter second numb: ";
+	cin>>numb2;
+	
+	
+  int x= numb(num, numb2);
+	cout<<x;
+	
+	
 }
-void mul(int x, int y){
-int product;
-product=x*y;
-cout<<"The product comes out to be: "<<product;
-
+bool numb(int num, int numb2)
+{
+	if(num>numb2)
+	{
+		return 1;
+	}
+	
+	else if(num<=numb2)
+	{
+		return 0;
+	}
 }

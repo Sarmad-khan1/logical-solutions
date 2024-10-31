@@ -1,28 +1,57 @@
 #include <iostream>
+#include <conio.h>
 using namespace std;
-void op(int x, int y);
-main(){
-	int x;
-	cout<<"Enter value: ";	
-	cin>>x;
+string checktitle(char gender, int age);
+int main()
+{
+	system("cls");
+	char gender;
+	cout<<"Enter your gender(m/f): ";
+	cin>>gender;
 	
-	int y;
-	cout<<"Enter value: ";
-	cin>>y;
+	int age;
+	cout<<"Enter Your Age: ";
+	cin>>age;
 	
-	op(x, y);
-
+	string receiver;
+	receiver=checktitle(gender, age);
+	
+	cout<<"Your personal title is "<<receiver<<endl;
+	
+	
+	cout<<"Press Enter to Continue...";
+	getch(); 
+	system("cls");
+	
+	return 0;
 }
-void op(int x, int y){
-	int sum;
-	sum=x+y;
-	if(sum>=10){
-			cout<<"Output of sum operation is: "<<sum;
-			}			
-			
-				
-		else if(sum>=20 && sum<25){
-				cout<<"This is else if sum output: ";
-				}
-			
-			}
+string checktitle(char gender, int age)
+{
+	string gen="";
+	if(age>0 && age<=17)
+	{
+		if(gender=='m')
+		{
+			return "Master";
+		}
+		if(gender=='f')
+		{
+			return "Miss";
+		}
+	}
+	if(age>17)
+	{
+		if(gender=='m')
+		{
+			return "Mr.";
+		}
+		if(gender=='f')
+		{
+			return "Ms.";
+		}
+	}
+	
+	
+	
+	
+}

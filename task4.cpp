@@ -1,25 +1,59 @@
 #include <iostream>
+#include <conio.h>
 using namespace std;
-void interestrate(int x, float y, int z);
-main(){	
-	int x;
-	cout<<"Enter Principal Amount taken: ";
-	cin>>x;
+float value(char shape, float length);
+int main()
+{	
+	system("cls");
+	while(true){
+	char shape;
+	cout << "Enter character (s: square, c: circle, t: triangle, h: hexagon): ";
+	cin >> shape;
 
- 	float y;
-	cout<<"Interest rate per month: ";
-	cin>>y;
+	float length;
+	cout << "Enter length of one side: ";
+	cin >> length;
 
-	int z;
-	cout<<"Time period of debt amount: ";		
-	cin>>z;
-	interestrate(x, y, z);
-        }
+	float y;
+	y= value(shape, length);
 
-void interestrate(int x, float y, int z){
-	float rate;
-	rate=(x*y*z)/100;
-	cout<<"The interest rate for "<<x<<" amount for a period of "<<z<< "month comes out to be :"<<rate;	
+	cout << "Perimeter of shape " << shape << " is: " << y << endl;
 	
+	cout<<"Press any key to terminate the program...";
+	getch();
+	system("cls");
+}
+}
+
+float value(char shape, float length)
+{	
+	float perimeter;
+	
+	if (shape == 's')
+	{
+		perimeter = 4 * length;
+	}
+	else if (shape == 'c')
+	{
+		perimeter = 2 * 3.14 * length;
+
+	}
+	else if (shape== 't')
+	{
+		perimeter = 3 * length;
+
+	}
+	else if (shape == 'h')
+	{
+		perimeter = 6 * length;
+
+	}
+	else
+	{
+		cout<<"Invalid shape Character."<<endl;
+		return 0;
+	}
+	
+				return perimeter;
 
 }

@@ -1,47 +1,52 @@
 #include <iostream>
+#include <conio.h>
 using namespace std;
-void grading(int x, string name);
-main(){
-string name;
-	cout<<"Enter Your Name: ";
-	cin>>name;
-while(true){
+int bill(string day, string month , int amount);
+int main()
+{
+	system("cls");
+	while(true) {
+	string day;
+	cout<<"Enter day: ";
+	cin>>day;
 	
-
-	int x;
-	cout<<"Enter Your Marks: ";
-	cin>>x;
-
-	grading(x, name);
+	string month;
+	cout<<"Enter the month: ";
+	cin>>month;
+	
+	int amount;
+	cout<<"Enter Amount: ";
+	cin>>amount;
+	
+	int y;
+	y=bill(day, month, amount);
+	cout<<"Payable amount comes out to be: "<<y<<endl;
+	
+	cout<<"Press Enter to Continue...";
+	getch();
+	system("cls");
 	}
 }
-void grading(int x, string name){
-	
-	if(x<=49){
-		cout<<"You Got F Grade at "<<x<<" marks"<<endl;
-			}
-	else if(x>=0 && x<49){
-		cout<<"You Got F Grade at "<<x<<" marks"<<endl;
-			}
-
-	else if(x>=50 && x<60){
-		cout<<"You Got E Grade at "<<x<<" marks"<<endl;	
- 			}
- 	
-	else if(x>=60 && x<70){
-		cout<<"You Got D Grade at "<<x<<" marks"<<endl;	
-			}
-
-	else if(x>=70 && x<80){
-		cout<<"You Got C Grade at "<<x<< "marks"<<endl;
-			}
-	else if(x>=80 && x<90){
-		cout<<"You Got B Grade at "<<x<<" marks"<<endl;
-			}
-
-	else if(x>=90 && x<100){
-		cout<<"You Got A Grade at "<<x<<" marks"<<endl;
+int bill(string day, string month, int amount)
+{	float tax=0;
+	float total=amount;
+	if(day=="sunday" || day=="monday")
+	{
+		if(month=="oct" || month=="aug" || month=="march")
+		{
+			tax=0.1*amount;
+		total=amount-tax;
 		}
+	}
+	if(day=="monday")
+	{
+		if(month=="nov" || month == "dec")
+		{
+			tax=0.05*amount;
+		total=amount-tax;
+		}
+	}
+	return total;
 	
-
+	
 }

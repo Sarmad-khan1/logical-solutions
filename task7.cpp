@@ -1,33 +1,63 @@
 #include <iostream>
+#include <conio.h>
 using namespace std;
-void sq(int x, float y, int power);
-main(){
+float payable(string day, string month, int amount);
+int main()
+{
+	system("cls");
+	while(true){
+	string month;
+	cout << "Enter month: ";
+	cin >> month;
 
-int x;
-cout<<"Insert value: ";
-cin>>x;
-float y;
-cout<<"Insert value: ";
-cin>>y;
+	string day;
+	cout << "Enter shopping day: ";
+	cin >> day;
 
-int power;
-cout<<"Exponential Power: ";
-cin>>power;
+	int amount;
+	cout << "Enter total Purchase amount: ";
+	cin >> amount;
 
-
-	sq(x, y, power);
+	int paytotal = 0;
+	paytotal = payable(day, month, amount);
+	cout<<"Total payable amount after discount is: "<<paytotal<<endl;
+	
 	}
-	void sq(int x, float y, int power){
-					float rate;
-					rate=x+y;
-					
-					float square=1;
-					int count=0;
-					while(count<power){
-							    count=count+1;
-							    square=square*rate;
-								}	
-							cout<<"Exponential comes out to be: "<<square;
-							
-							}
-   
+	cout<<"Press Enter To Continue...";
+	getch();
+	system("cls");
+}
+float payable(string day, string month, int amount)
+{	
+	float tax = 0;
+	float netfinal = amount;
+	if (day == "sunday")
+	{
+		if (month == "november" || month == "nov")
+		{
+			tax = amount * (0.2 / 100);
+			netfinal = amount - tax;
+		}
+	
+	else if (month == "oct" || month == "october")
+	{
+		tax = amount * (0.5 / 100);
+		netfinal = amount - tax;
+	}
+	}
+	 if(day=="monday")
+	{
+		 if(month == "october" || month =="oct")
+		{
+			tax=amount*(0.3/100);
+			netfinal=amount-tax;
+		}
+		else if(month=="august" || month=="aug")
+		{
+		 tax=amount*(0.09/100);
+		 netfinal=amount-tax;
+		}
+	}
+	
+	return netfinal;
+}
